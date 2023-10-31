@@ -1,13 +1,13 @@
-import styles from "../styles/styles.module.css";
-import { useProduct } from "../hooks/useProduct";
-import React, { createContext, CSSProperties } from "react";
+import styles from '../styles/styles.module.css';
+import { useProduct } from '../hooks/useProduct';
+import React, { createContext, CSSProperties } from 'react';
 import {
   ProductContextProps,
   Product,
   onChangeArgs,
   InitialValues,
   ProductCardHandlers,
-} from "../interfaces/interfaces";
+} from '../interfaces/interfaces';
 
 export const ProductContext = createContext({} as ProductContextProps);
 const { Provider } = ProductContext;
@@ -32,7 +32,13 @@ const ProductCard = ({
   value,
   initialValues,
 }: Props) => {
-  const { counter, increaseBy, maxCount, isMaxCountReached, reset } = useProduct({
+  const {
+    counter,
+    increaseBy,
+    maxCount,
+    isMaxCountReached,
+    reset,
+  } = useProduct({
     product,
     onChange,
     value,
@@ -47,9 +53,9 @@ const ProductCard = ({
           isMaxCountReached,
           maxCount: initialValues?.maxCount,
           product,
-          
+
           increaseBy,
-          reset 
+          reset,
         })}
       </div>
     </Provider>
